@@ -3,11 +3,11 @@
 @section('content')
 <div class="box">
         <div class="box-header with-border">
-          @if(session('success'))
+          @if($message = Session::get('success'))
             <div class="alert alert-info alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h4><i class="icon fa fa-info"></i> Alert!</h4>
-              Berhasil, berhasil, hore!!
+              {{$message}}
             </div>
           @endif
             <a href="{{url('category/create')}}" class="btn btn-primary">

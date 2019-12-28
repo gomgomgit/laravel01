@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
     	$data->save();
 
-    	return redirect('/category')->with('success', 'berhasil'); 
+    	return redirect('/category')->with('success', 'Berhasil menambahkan category baru'); 
     }
 
     public function delete($id)
