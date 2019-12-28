@@ -31,7 +31,7 @@ class ArticleController extends Controller
     	$data->status = $request->status;
 
     	$data->save();
-    	return redirect('/article')->with('success', 'berhasil'); 
+    	return redirect('/article')->with('store', 'Berhasil menambahkan article baru'); 
     }
 
     public function edit($id)
@@ -52,7 +52,7 @@ class ArticleController extends Controller
     	$article->status = $request->status;
 
     	$article->save();
-    	return redirect('article'); 
+    	return redirect('article')->with('update', 'Berhasil mengedit article'); 
     }
 
     public function delete($id)
@@ -60,6 +60,6 @@ class ArticleController extends Controller
     	$data = Article::find($id);
     	$data->delete();
 
-    	return redirect('/article'); 
+    	return redirect('/article')->with('delete', 'Berhasil menghapus article'); 
     }
 }
