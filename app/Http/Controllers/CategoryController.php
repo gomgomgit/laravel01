@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
     	$data->save();
 
-    	return redirect('/category')->with('success', 'Berhasil menambahkan category baru'); 
+    	return redirect('/category')->with('store', 'Berhasil menambahkan category baru'); 
     }
 
     public function delete($id)
@@ -38,7 +38,7 @@ class CategoryController extends Controller
     	$data = Category::find($id);
     	$data->delete();
 
-    	return redirect('category');
+    	return redirect('category')->with('delete', 'Berhasil menghapus category');
     }
 
     public function edit($id) {
@@ -66,6 +66,6 @@ class CategoryController extends Controller
     	$data = Category::find($id);
     	$data->name = $request->name;
     	$data->save();
-    	return redirect('category');
+    	return redirect('category')->with('update', 'Berhasil mengedit category');
     }
 }
