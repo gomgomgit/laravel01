@@ -20,6 +20,10 @@ class CategoryController extends Controller
 
     public function store(Request $request) 
     {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        
     	$data 	= new Category;
     	$data->name = $request->name;
 
