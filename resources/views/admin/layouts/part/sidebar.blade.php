@@ -38,16 +38,13 @@
         <li>
           <a href='{{url("/category")}}'>
             <i class="fa fa-list"></i> <span>Category</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">Hot</small>
-            </span>
           </a>
         </li>
         <li>
           <a href='{{url("/article")}}'>
             <i class="fa fa-bookmark"></i> <span>Article</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">Hot</small>
+              <small class="label pull-right bg-red">New</small>
             </span>
           </a>
         </li>

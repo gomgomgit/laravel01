@@ -51,6 +51,7 @@
 
               </table>
         </div>
+        @include('sweetalert::alert')
         <!-- /.box-body -->
         <div class="box-footer">
           Footer

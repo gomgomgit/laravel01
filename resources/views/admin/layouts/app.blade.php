@@ -165,5 +165,9 @@
     });
   });
 </script>
+<script>
+    CKEDITOR.config.removePlugins = 'elementspath';
+</script>
+
 </body>
 </html>
