@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index() 
     {
-    	$data['category'] = Category::orderBy('id', 'desc')->get();
+    	$data['category'] = Category::orderBy('id', 'desc')->paginate(4);
     	return view('category.index', $data);
     }
 
@@ -23,7 +23,7 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required'
         ]);
-        
+
     	$data 	= new Category;
     	$data->name = $request->name;
 

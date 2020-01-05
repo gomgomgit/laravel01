@@ -12,8 +12,17 @@
         	<form role="form" action='{{url("category/store")}}' method="post">
         	@csrf
               <div class="box-body">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">Category</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Category Name" name="name">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

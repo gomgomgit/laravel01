@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('/test/{name?}', function($name = 'jon snow'){
 	return 'Hello '. $name;
 });
-Route::get('/user', 'UserController@index');
 
 // Category
 Route::get('category', 'CategoryController@index');
@@ -41,3 +40,13 @@ Route::get('article/edit/{id}', 'ArticleController@edit');
 Route::post('article/update/{id}', 'ArticleController@update');
 
 Route::get('article/delete/{id}', 'ArticleController@delete');
+
+// User 
+Route::get('user', 'UserController@index');
+Route::get('user/create', 'UserController@create');
+Route::post('user/store', 'UserController@store');
+
+Route::get('user/edit/{id}', 'UserController@edit');
+Route::post('user/update/{id}', 'UserController@update');
+
+Route::get('user/delete/{id}', 'UserController@delete');

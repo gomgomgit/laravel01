@@ -5,23 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
+
 
 class ArticleController extends Controller
 {
     public function index()
     {
-    	$data = Article::all();
-    	return view('article.index',['article' => $data]); 
+    	$article = Article::paginate(6);
+    	return view('article.index',['article' => $article]); 
     }
 
     public function create()
     {
-    	$data['category'] = Category::orderBy('name')->get();
-    	return view('article.create', $data);
+    	$cate['category'] = Category::orderBy('name')->get();
+        $user['user'] = User::orderBy('name')->get();
+    	return view('article.create', $cate, $user);
     }
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'category' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+            'cby' => 'required',
+            'status' => 'required'
+        ]);
+
     	$data = new Article;
 
     	$data->category_id = $request->category;
@@ -43,6 +54,14 @@ class ArticleController extends Controller
 
     public function update($id, Request $request)
     {
+        $this->validate($request, [
+            'category' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+            'cby' => 'required',
+            'status' => 'required'
+        ]);
+
     	$article = Article::find($id);
 
     	$article->category_id = $request->category;

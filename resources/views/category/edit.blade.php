@@ -12,7 +12,6 @@
         	<form role="form" action='/category/update/{{($category->id)}}' method="post">
         	@csrf
               <div class="box-body">
-                <input type="hidden" name="id" value="{{$category->id}}">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Category Name</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Category Name" name="name" value="{{$category->name}}">

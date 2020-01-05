@@ -36,6 +36,11 @@
           </ul>
         </li>
         <li>
+          <a href='{{url("/user")}}'>
+            <i class="fa fa-list"></i> <span>User</span>
+          </a>
+        </li>
+        <li>
           <a href='{{url("/category")}}'>
             <i class="fa fa-list"></i> <span>Category</span>
           </a>

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href='{{asset("AdminLTE-2.4/bower_components/Ionicons/css/ionicons.min.css")}}'>
   <!-- Theme style -->
   <link rel="stylesheet" href='{{asset("AdminLTE-2.4/dist/css/AdminLTE.min.css")}}'>
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href='{{asset("AdminLTE-2.4/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")}}'>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href='{{asset("AdminLTE-2.4/dist/css/skins/_all-skins.min.css")}}'>
@@ -140,6 +142,8 @@
 <script src='{{asset("AdminLTE-2.4/plugins/iCheck/icheck.js")}}'></script>
 <!-- Select2 -->
 <script src='{{asset("AdminLTE-2.4/bower_components/select2/dist/js/select2.full.min.js")}}'></script>
+<!-- bootstrap datepicker -->
+<script src='{{asset("AdminLTE-2.4/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}'></script>
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
@@ -154,20 +158,26 @@
 </script>
 <script>
   $(document).ready(function(){
-    $('.select2').select2()
-  })
-</script>
-<script>
-  $(document).ready(function(){
+    $('.select2').select2();
+
     //Flat red color scheme for iCheck
     $('input[type="radio"].flat-red').iCheck({
       radioClass   : 'iradio_flat-green'
     });
-  });
+
+    //Date picker
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true
+    })
+  })
 </script>
+
 <script>
     CKEDITOR.config.removePlugins = 'elementspath';
 </script>
+
 
 </body>
 </html>

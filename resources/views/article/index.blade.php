@@ -45,13 +45,10 @@
                 @foreach($article as $row)
                 <tr>
                 	<td>{{$nomor++}}</td>
-                  <td>
-                  {{$row->category->name}}
-
-                  </td>
+                  <td>{{$row->category->name}}</td>
                 	<td>{{$row->title}}</td>
-                  <td>{{$row->content}}</td>
-                  <td>{{$row->created_by}}</td>
+                  <td>{!!$row->content!!}</td>
+                  <td>{{$row->user->name}}</td>
                   <td>
                     @if($row->status == 1 )
                       Active
@@ -71,6 +68,7 @@
         <!-- /.box-body -->
         <div class="box-footer">
           Footer
+          {{$article->links()}}
         </div>
         <!-- /.box-footer-->
       </div>

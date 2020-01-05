@@ -54,6 +54,7 @@
         <!-- /.box-body -->
         <div class="box-footer">
           Footer
+            {{$category->links()}}
         </div>
         <!-- /.box-footer-->
       </div>
