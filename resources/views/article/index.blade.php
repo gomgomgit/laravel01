@@ -34,9 +34,9 @@
                   <th style="width: 10px">No</th>
                   <th>Category</th>
                   <th>Title</th>
-                  <th>Content</th>
+                  <!-- <th>Content</th> -->
                   <th>Created By</th>
-                  <th>Status</th>
+                  <th style="width: 140px">Status</th>
                   <th>Action</th>
                 </tr>
                	@php
@@ -47,7 +47,7 @@
                 	<td>{{$nomor++}}</td>
                   <td>{{$row->category->name}}</td>
                 	<td>{{$row->title}}</td>
-                  <td>{!!$row->content!!}</td>
+                  <!-- <td>{!!$row->content!!}</td> -->
                   <td>{{$row->user->name}}</td>
                   <td>
                     @if($row->status == 1 )
